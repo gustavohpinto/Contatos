@@ -17,7 +17,7 @@ namespace Contatos.Tests.Domain
         [Fact]
         public void Create_WithValidData_ShouldSucceed()
         {
-            var birth = new DateOnly(2000, 9, 18); // faz 25 anos exatos nessa data-base
+            var birth = new DateOnly(2000, 9, 18);
             var c = Contact.Create("Maria", birth, Sex.Female, _clock);
 
             c.Name.Should().Be("Maria");

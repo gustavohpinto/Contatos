@@ -11,7 +11,7 @@ namespace Contatos.Domain.Repositories
     {
         Task AddAsync(Contact contact, CancellationToken ct);
         Task<Contact?> GetActiveByIdAsync(Guid id, CancellationToken ct);
-        Task<Contact?> GetByIdIncludingInactiveAsync(Guid id, CancellationToken ct); // 👈 novo
+        Task<Contact?> GetByIdIncludingInactiveAsync(Guid id, CancellationToken ct);
 
         Task<List<Contact>> ListActiveAsync(CancellationToken ct);
         Task<bool> ExistsAsync(Guid id, CancellationToken ct);

@@ -19,14 +19,10 @@ namespace Contatos.Infrastructure.IoC
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            // Database Context
             services.AddDbContext<AppDBContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            // Repositories
             services.AddScoped<IContactRepository, ContactRepository>();
-            // Time
             services.AddSingleton<IClock, SystemClock>();
-            // Services
             services.AddScoped<IContactService, ContactService>();
             return services;
         }
